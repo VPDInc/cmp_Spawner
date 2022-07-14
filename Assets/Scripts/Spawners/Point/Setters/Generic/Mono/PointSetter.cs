@@ -2,8 +2,8 @@ using UnityEngine;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1
+// Version: 1.2
 namespace Spawners.Point.Setters.Generic.Mono
 {
-    public class PointSetter : MonoBehaviour, ISettablePoint { }
+    public sealed class PointSetter : MonoBehaviour, ISettablePoint { }
 }

@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1
+// Version: 1.2
 namespace Spawners.Sequence
 {
     public class ElementGetterBySequence<TElement>
@@ -13,8 +13,6 @@ namespace Spawners.Sequence
         #region Fields
         public readonly SequenceType Sequence;
         private readonly TElement[] _elements;
-        
-        private int _index;
         #endregion
 
         #region Properties

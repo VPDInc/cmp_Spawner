@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1
+// Version: 1.2
 namespace Spawners.Factories
 {
-    public interface IFactory<out TComponent> where TComponent : Component
+    public interface IFactory<TComponent> where TComponent : Component
     {
-        public TComponent Create();
+        public TComponent Create(UnityAction<TComponent> initialize);
     }
 }

@@ -3,7 +3,7 @@ using Spawners.Point.Getters;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1
+// Version: 1.2
 namespace Spawners.Point.Setters
 {
     public interface ISettablePoint

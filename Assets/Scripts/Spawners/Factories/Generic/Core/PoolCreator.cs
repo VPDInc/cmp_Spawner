@@ -1,14 +1,14 @@
 using Pool;
 using System;
 using UnityEngine;
-using UnityEngine.Pool;
 using Spawners.Sequence;
+using UnityEngine.Events;
 
 using Object = UnityEngine.Object;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1
+// Version: 1.2
 namespace Spawners.Factories.Generic.Core
 {
     [Serializable]
@@ -16,7 +16,8 @@ namespace Spawners.Factories.Generic.Core
     {
         #region Inspector fields
         [SerializeField] [Min(0)] private int _startCount;
-        [SerializeField] [Min(1)] private int _maxCount;
+        [SerializeField] [Min(0)] private int _defaultCapacity;
+        [SerializeField] [Min(1)] private int _maxSize;
         
         [SerializeField] private SequenceType _sequenceType;
         [SerializeField] private TComponent[] _objs;
@@ -25,31 +26,42 @@ namespace Spawners.Factories.Generic.Core
         #region Fields
         private ObjectPool<TComponent> _pool;
         private ElementGetterBySequence<TComponent> _elementGetterBySequence;
+        private UnityAction<TComponent> _initialize;
         #endregion
 
-        public PoolCreator(int startCount, int maxCount,
+        public PoolCreator(int startCount, int defaultCapacity, int maxSize,
             SequenceType sequenceType, params TComponent[] objs)
         {
             _startCount = startCount;
-            _maxCount = maxCount;
+            _defaultCapacity = defaultCapacity;
+            _maxSize = maxSize;
             
             _sequenceType = sequenceType;
             _objs = objs;
         }
         
-        public TComponent Create()
+        public TComponent Create(UnityAction<TComponent> initialize)
         {
+            _initialize = initialize;
             if (_pool == null) InitializePool();
-            return _pool.Get();
+            
+            var component = _pool.Get();
+            return component;
         }
         
-        public void PutToPool(TComponent obj) => _pool.Release(obj);
+        public void Release(TComponent obj) => _pool.Release(obj);
 
         #region Initialize functions
         private void InitializePool()
         {
             _pool = new ObjectPool<TComponent>(InstantiateObj, EnableObject, 
-                DisableObject, DestroyObject, true, _startCount, _maxCount);
+                DisableObject, DestroyObject, false, _defaultCapacity, _maxSize);
+
+            for (var i = 0; i < _startCount; i++)
+            {
+                var component = InstantiateObj();
+                Release(component);
+            }
         }
         
         private TComponent InstantiateObj()
@@ -58,8 +70,9 @@ namespace Spawners.Factories.Generic.Core
             
             var component = Object.Instantiate(_elementGetterBySequence.Get());
             if (component is IPooledObject<TComponent> pooledObject)
-                pooledObject.ReturnedToPool += PutToPool;
-            PutToPool(component);
+                pooledObject.ReturnedToPool += Release;
+            
+            _initialize?.Invoke(component);
             return component;
         }
         #endregion

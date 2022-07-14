@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1
+// Version: 1.2
 namespace Spawners.Point.Getters.Generic.Core
 {
     [Serializable]
@@ -40,12 +40,12 @@ namespace Spawners.Point.Getters.Generic.Core
                 throw new NullReferenceException("Zones are not initialized");
             
             _rotationMode = rotationMode;
-            _rotationLimit = rotationLimit;
             _sequenceType = sequenceType;
-
+            _rotationLimit = rotationLimit;
+            
             _zones = zones;
         }
-        
+
         public Point GetPoint()
         {
             _elementGetterBySequence ??= new ElementGetterBySequence<Zone>(_sequenceType, _zones);

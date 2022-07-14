@@ -9,14 +9,16 @@ using Spawners.Point.Setters.Generic.Mono;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1
+// Version: 1.2
 namespace Spawners.Generic
 {
-    public class ComponentSpawner : ComponentSpawner<Component> { }
+    [AddComponentMenu("Spawners/Spawners/Component spawner")]
+    public sealed class ComponentSpawner : ComponentSpawner<Component> { }
     
-    public class ComponentSpawner<TComponent> : Spawner<TComponent> where TComponent : Component
+    public abstract class ComponentSpawner<TComponent> : Spawner<TComponent> where TComponent : Component
     {
         #region Inspector fields
+        [Header("Controllers")]
         [SerializeField] private BaseCreator<TComponent> _creator;
         [SerializeField] private BasePointGetter _getter;
         [SerializeField] private PointSetter _setter;
@@ -26,9 +28,7 @@ namespace Spawners.Generic
         protected sealed override IFactory<TComponent> Factory => _creator;
         protected sealed override IGettablePoint Gettable => _getter;
         protected sealed override ISettablePoint Settable => _setter;
-        protected sealed override UnityAction<TComponent> Initialize => InitializeObj;
+        protected override UnityAction<TComponent> Initialize => null;
         #endregion
-        
-        protected virtual void InitializeObj(TComponent obj) { }
     }
 }

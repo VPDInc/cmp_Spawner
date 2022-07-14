@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
 using Spawners.Sequence;
+using UnityEngine.Events;
 
 using Object = UnityEngine.Object;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1
+// Version: 1.2
 namespace Spawners.Factories.Generic.Core
 {
     [Serializable]
@@ -25,10 +26,14 @@ namespace Spawners.Factories.Generic.Core
             _objs = objs;
         }
 
-        public TComponent Create()
+        public TComponent Create(UnityAction<TComponent> initialize)
         {
             _elementGetterBySequence ??= new ElementGetterBySequence<TComponent>(_sequenceType, _objs);
-            return Object.Instantiate(_elementGetterBySequence.Get());
+            
+            var component = Object.Instantiate(_elementGetterBySequence.Get());
+            initialize?.Invoke(component);
+
+            return component;
         }
     }
 }
