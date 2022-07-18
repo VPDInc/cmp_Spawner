@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1.2
+// Version: 1.3
 namespace Spawners.Factories.Generic.Core
 {
     [Serializable]

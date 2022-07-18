@@ -6,7 +6,7 @@ using Spawners.Point.Setters;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1.2
+// Version: 1.3
 namespace Spawners
 {
     public abstract class Spawner<TComponent> : MonoBehaviour, ISpawnable<TComponent> where TComponent : Component
