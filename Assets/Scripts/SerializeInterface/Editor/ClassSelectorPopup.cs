@@ -20,8 +20,6 @@ namespace SerializeInterface.Editor
         {
             var enumerable = types as Type[] ?? types.ToArray();
             
-            Debug.Log(enumerable.Length);
-            Debug.Log(EditorGUIUtility.singleLineHeight);
             SetTypes(enumerable);
             minimumSize = new Vector2(minimumSize.x, EditorGUIUtility.singleLineHeight * (enumerable.ToArray().Length + 2));
         }

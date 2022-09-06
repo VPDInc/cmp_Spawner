@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 // Code by VPDInc
 // Email: vpd-2000@yandex.ru
-// Version: 1.3
+// Version: 1.5.0
 namespace Spawners.Point
 {
     [Serializable]
