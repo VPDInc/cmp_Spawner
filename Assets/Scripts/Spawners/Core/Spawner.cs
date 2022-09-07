@@ -35,7 +35,7 @@ namespace Spawners.Core
         
         [Space, Header("Events")]
         [SerializeField] private UnityEvent<TComponent> _initialize = new();
-        [SerializeField] private UnityEvent<TComponent> _spawned;
+        [SerializeField] private UnityEvent<TComponent> _spawned = new();
         #endregion
 
         #region Events

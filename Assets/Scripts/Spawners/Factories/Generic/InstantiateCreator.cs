@@ -1,6 +1,6 @@
 using System;
-using General.Sequence;
 using UnityEngine;
+using General.Sequence;
 using UnityEngine.Events;
 
 using Object = UnityEngine.Object;
@@ -14,6 +14,7 @@ namespace Spawners.Factories.Generic
     public sealed class InstantiateCreator<TComponent> : IFactory<TComponent> where TComponent : Component
     {
         #region Inspector fields
+        [Header("Parameters")]
         [SerializeField] private Transform _content;
         [SerializeField] private SequenceType _sequenceType;
         [SerializeField] private TComponent[] _objs;

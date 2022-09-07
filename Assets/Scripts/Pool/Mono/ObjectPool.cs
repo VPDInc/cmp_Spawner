@@ -10,8 +10,10 @@ namespace Pool.Mono
     public class ObjectPool<TComponent> : MonoBehaviour where TComponent : Component
     {
         #region Inspector fields
+        [Header("Settings")]
         [SerializeField] private bool _onInitializeAwake;
         
+        [Header("Parameters")]
         [SerializeField] [Min(0)] private int _startCount;
         [SerializeField] [Min(0)] private int _defaultCapacity;
         [SerializeField] [Min(1)] private int _maxSize;

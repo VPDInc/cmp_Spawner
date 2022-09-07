@@ -252,8 +252,6 @@ GameObject:
   - component: {fileID: 410087041}
   - component: {fileID: 410087040}
   - component: {fileID: 410087042}
-  - component: {fileID: 410087043}
-  - component: {fileID: 410087044}
   m_Layer: 0
   m_Name: Directional light
   m_TagString: Untagged
@@ -358,62 +356,110 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!114 &410087043
+--- !u!1 &699991997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699991998}
+  m_Layer: 0
+  m_Name: Points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &699991998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699991997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1749422824}
+  - {fileID: 1719193183}
+  - {fileID: 1064455559}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1064455558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064455559}
+  m_Layer: 0
+  m_Name: Point (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1064455559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064455558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699991998}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1239429390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1239429391}
+  - component: {fileID: 1239429392}
+  m_Layer: 0
+  m_Name: Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1239429391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239429390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1239429392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410087039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 011a8ca41b80b47fc86ff154e41b7453, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isPlayOnAwake: 1
-  _spawner:
-    _debugMode: 0
-    _factory:
-      _pool: {fileID: 410087044}
-    _gettable:
-      rid: 692844204478955526
-    _settable:
-      rid: 692844204478955527
-    _initialize:
-      m_PersistentCalls:
-        m_Calls: []
-    _spawned:
-      m_PersistentCalls:
-        m_Calls: []
-  _isAutoStop: 1
-  _minStopTime: 25
-  _maxStopTime: 25
-  _minStartTime: 1
-  _maxStartTime: 1
-  _minTime: 1
-  _maxTime: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 692844204478955526
-      type: {class: TransformPointGetter, ns: Spawners.Point.Getters.Generic, asm: Spawners}
-      data:
-        _rotationMode: 0
-        _rotationLimit:
-          _minLimit: {x: 0, y: 0, z: 0}
-          _maxLimit: {x: 0, y: 0, z: 0}
-        _sequenceType: 0
-        _transforms:
-        - {fileID: 1761366703}
-    - rid: 692844204478955527
-      type: {class: PointSetter, ns: Spawners.Point.Setters.Generic, asm: Spawners}
---- !u!114 &410087044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410087039}
+  m_GameObject: {fileID: 1239429390}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bfdb8faa1fc54c4e93e1034c3865071, type: 3}
@@ -421,14 +467,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onInitializeAwake: 0
   _startCount: 10
-  _defaultCapacity: 10
-  _maxSize: 25
-  _content: {fileID: 1761366703}
+  _defaultCapacity: 25
+  _maxSize: 10
+  _content: {fileID: 1239429391}
   _sequenceType: 1
   _objs:
   - {fileID: 546842619632041303, guid: eecd7c1ddcc7e479fb7dbe5c3e9c5aa4, type: 3}
   - {fileID: 286029731544391507, guid: af8168e7ae8074c48869bb1598de0d08, type: 3}
   - {fileID: 4141987540737980403, guid: 57c2df7ee2e6d4375b6161712306c371, type: 3}
+--- !u!1 &1719193182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1719193183}
+  m_Layer: 0
+  m_Name: Point (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1719193183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719193182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699991998}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1749422823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1749422824}
+  m_Layer: 0
+  m_Name: Point (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1749422824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749422823}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 699991998}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1761366702
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1761366703}
+  - component: {fileID: 1761366704}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -460,3 +569,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1761366704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761366702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 011a8ca41b80b47fc86ff154e41b7453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPlayOnAwake: 1
+  _spawner:
+    _debugMode: 0
+    _factory:
+      _pool: {fileID: 1239429392}
+    _gettable:
+      rid: 692844204478955532
+    _settable:
+      rid: 692844204478955533
+    _initialize:
+      m_PersistentCalls:
+        m_Calls: []
+    _spawned:
+      m_PersistentCalls:
+        m_Calls: []
+  _isAutoStop: 1
+  _minStopTime: 25
+  _maxStopTime: 25
+  _minStartTime: 2
+  _maxStartTime: 2
+  _minTime: 1
+  _maxTime: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 692844204478955532
+      type: {class: TransformPointGetter, ns: Spawners.Point.Getters.Generic, asm: Spawners}
+      data:
+        _rotationMode: 0
+        _rotationLimit:
+          _minLimit: {x: 0, y: 0, z: 0}
+          _maxLimit: {x: 0, y: 0, z: 0}
+        _sequenceType: 1
+        _transforms:
+        - {fileID: 1749422824}
+        - {fileID: 1719193183}
+        - {fileID: 1064455559}
+    - rid: 692844204478955533
+      type: {class: PointSetter, ns: Spawners.Point.Setters.Generic, asm: Spawners}

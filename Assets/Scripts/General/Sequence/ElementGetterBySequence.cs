@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using System.Collections.Generic;
 
 using Random = UnityEngine.Random;
@@ -13,12 +14,25 @@ namespace General.Sequence
         #region Fields
         public readonly SequenceType Sequence;
         private readonly TElement[] _elements;
+
+        private int _index;
         #endregion
 
         #region Properties
         public IReadOnlyList<TElement> Elements => _elements;
-        
-        public int Index { get; private set; }
+
+        public int Index
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (Sequence != SequenceType.Queue)
+                    Debug.LogWarning($"With this Sequence ({Sequence}), the index does not matter");
+#endif
+                return _index;
+            }
+            private set => _index = value;
+        }
         #endregion
 
         public ElementGetterBySequence(SequenceType sequence, params TElement[] elements)

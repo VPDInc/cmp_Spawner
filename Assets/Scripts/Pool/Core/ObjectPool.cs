@@ -31,14 +31,11 @@ namespace Pool.Core
             Action<T> actionOnRelease = null, Action<T> actionOnDestroy = null,
             bool collectionCheck = true, int defaultCapacity = 10, int maxSize = 10000)
         {
-            if (createFunc == null) 
-                throw new ArgumentNullException(nameof(createFunc));
             if (maxSize <= 0)
                 throw new ArgumentException("Max Size must be greater than 0", nameof (maxSize));
-
+            
+            _createFunc = createFunc ?? throw new ArgumentNullException(nameof(createFunc));
             _queue = new Queue<T>(defaultCapacity);
-
-            _createFunc = createFunc;
             _actionOnGet = actionOnGet;
             _actionOnRelease = actionOnRelease;
             _actionOnDestroy = actionOnDestroy;
