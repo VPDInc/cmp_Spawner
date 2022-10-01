@@ -6,7 +6,7 @@ using Spawners.Factories;
 using Random = UnityEngine.Random;
 
 // Code by VPDInc
-// Email: vpd-2000@yandex.ru
+// Email: vpd-2000@yandex.com
 // Version: 1.5.0
 namespace Spawners.Mono
 {

@@ -3,6 +3,9 @@ using UnityEngine;
 using General.Sequence;
 using UnityEngine.Events;
 
+// Code by VPDInc
+// Email: vpd-2000@yandex.com
+// Version: 1.0.0
 namespace Pool.Mono
 {
     public class ObjectPool : ObjectPool<Component> { }

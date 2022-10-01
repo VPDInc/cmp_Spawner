@@ -1,4 +1,3 @@
-#if UNITY_EDITOR
 using System;
 
 // Code by VPDInc
@@ -9,7 +8,7 @@ namespace SerializeInterface.Runtime
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface, Inherited = false)]
     public class PopupMenuAttribute : Attribute
     {
-        private static readonly char[] Separator = { '/', '\\' };
+        private static readonly char[] _separator = { '/', '\\' };
 
         #region Properties
         public int Order { get; }
@@ -30,9 +29,8 @@ namespace SerializeInterface.Runtime
         }
 
         public string[] GetSplitMenuName() => !string.IsNullOrWhiteSpace(MenuName) ?
-            MenuName.Split(Separator, StringSplitOptions.RemoveEmptyEntries) :
+            MenuName.Split(_separator, StringSplitOptions.RemoveEmptyEntries) :
             Array.Empty<string>();
         #endregion
     }
 }
-#endif

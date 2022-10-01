@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 // Code by VPDInc
-// Email: vpd-2000@yandex.ru
+// Email: vpd-2000@yandex.com
 // Version: 1.0.0
 namespace Pool.Core
 {

@@ -1,4 +1,3 @@
-#if UNITY_EDITOR
 using System;
 using UnityEngine;
 
@@ -10,4 +9,3 @@ namespace SerializeInterface.Runtime
     [AttributeUsage(AttributeTargets.Field)]
     public sealed class SelectorAttribute : PropertyAttribute { }
 }
-#endif
